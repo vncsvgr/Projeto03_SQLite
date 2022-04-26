@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projeto03_SQLite.Views.pagCidade">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Cidades" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <Entry x:Name="txtCidade" Placeholder="Nome da Cidade" />
+            <Entry x:Name="txtUF" Placeholder="UF da Cidade" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnAdicionar" Text="Adicionar" HorizontalOptions="FillAndExpand" Clicked="btnAdicionar_Clicked" />
+            </StackLayout>
+
+            <SearchBar x:Name="sbCidade" TextChanged="sbCidade_TextChanged" />
+
+            <ListView x:Name="lstCidades">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,4*">
+                                <Label Text="{Binding }" />
+                                <Label Grid.Column="1" Text="{Binding }" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="btnVoltar" Text="Voltar ao Menu" Clicked="btnVoltar_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

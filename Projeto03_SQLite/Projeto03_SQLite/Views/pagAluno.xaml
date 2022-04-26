@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projeto03_SQLite.Views.pagAluno">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Cursos" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <Entry x:Name="txtId" Placeholder="ID do Aluno" IsReadOnly="True" />
+            <Entry x:Name="txtNome" Placeholder="Nome do Aluno" />
+
+            <Picker x:Name="pckCurso" Title="Selecione o curso do aluno" ItemDisplayBinding="{Binding nome}" />
+            <Picker x:Name="pckCidade" Title="Selecione a cidade do aluno" ItemDisplayBinding="{Binding nome}" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnAdicionar" Text="Adicionar" HorizontalOptions="FillAndExpand" Clicked="btnAdicionar_Clicked" />
+                <Button x:Name="btnAtualizar" Text="Atualizar" HorizontalOptions="FillAndExpand" Clicked="btnAtualizar_Clicked" />
+                <Button x:Name="btnExcluir" Text="Excluir" HorizontalOptions="FillAndExpand" Clicked="btnExcluir_Clicked" />
+            </StackLayout>
+
+            <SearchBar x:Name="sbAluno" TextChanged="sbAluno_TextChanged" />
+
+            <ListView x:Name="lstAlunos" ItemSelected="lstAlunos_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,4*,4*, 4*">
+                                <Label Text="{Binding id}" />
+                                <Label Grid.Column="1" Text="{Binding nome}" />
+                                <Label Grid.Column="2" Text="{Binding curso}" />
+                                <Label Grid.Column="3" Text="{Binding cidade}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="btnVoltar" Text="Voltar ao Menu" Clicked="btnVoltar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

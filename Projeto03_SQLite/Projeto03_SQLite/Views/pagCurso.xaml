@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projeto03_SQLite.Views.pagCurso">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Cursos" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <Entry x:Name="txtNome" Placeholder="Nome do Curso" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnAdicionar" Text="Adicionar" HorizontalOptions="FillAndExpand" Clicked="btnAdicionar_Clicked" />
+            </StackLayout>
+
+            <SearchBar x:Name="sbCurso" TextChanged="sbCurso_TextChanged" />
+
+            <ListView x:Name="lstCursos">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,4*">
+                                <Label Text="{Binding id}" />
+                                <Label Grid.Column="1" Text="{Binding nome}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="btnVoltar" Text="Voltar ao Menu" Clicked="btnVoltar_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
