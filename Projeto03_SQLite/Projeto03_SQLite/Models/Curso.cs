@@ -6,11 +6,12 @@ using SQLite;
 
 namespace Projeto03_SQLite.Models
 {
-    internal class Curso
+    public class Curso
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public string nome { get; set; }
+
         SQLiteConnection db;
 
         public Curso()

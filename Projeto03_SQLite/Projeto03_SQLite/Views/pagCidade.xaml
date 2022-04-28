@@ -22,8 +22,9 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid ColumnDefinitions="*,4*">
-                                <Label Text="{Binding }" />
-                                <Label Grid.Column="1" Text="{Binding }" />
+                                <Label Text="{Binding id}" />
+                                <Label Grid.Column="1" Text="{Binding nome}" />
+                                <Label Grid.Column="2" Text="{Binding uf}" />
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

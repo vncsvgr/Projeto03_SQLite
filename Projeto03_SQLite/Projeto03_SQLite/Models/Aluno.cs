@@ -6,7 +6,7 @@ using SQLite;
 
 namespace Projeto03_SQLite.Models
 {
-    internal class Aluno
+    public class Aluno
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Projeto03_SQLite.Models;
@@ -23,6 +19,7 @@ namespace Projeto03_SQLite.Views
             pckCurso.ItemsSource = c.Listar("");
             pckCidade.ItemsSource = ci.Listar("");
             lstAlunos.ItemsSource = a.Listar("");
+            
         }
 
         void limpar()
